@@ -17,7 +17,11 @@ public class CustomerController {
     @PostMapping("/add")
     public void addCustomer(@RequestBody Customer customer) {
         service.addCustomer(customer);
-        System.out.println(customer);
+    }
+
+    @GetMapping("/search/{id}")
+    public Customer searchCustomer(@PathVariable Integer id) {
+        return service.searchCustomer(id);
     }
 
     @PutMapping("/update")
@@ -28,7 +32,6 @@ public class CustomerController {
     @DeleteMapping("/delete/{id}")
     public void deleteCustomer(@PathVariable Integer id){
         service.deleteCustomer(id);
-        System.out.println(id);
     }
 
     @GetMapping("/getAll")

@@ -30,6 +30,11 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public void deleteCustomer(Integer id) {
+        repository.deleteById(id);
+    }
+
+    @Override
     public List<Customer> getAll() {
         List<CustomerEntity> customerEntityList = repository.findAll();
 
@@ -42,8 +47,8 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
-    public void deleteCustomer(Integer id) {
-        repository.deleteById(id);
+    public Customer searchCustomer(Integer id) {
+        return mapper.map(repository.findById(id), Customer.class);
     }
 
 }
