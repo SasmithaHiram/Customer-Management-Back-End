@@ -20,6 +20,11 @@ public class CustomerController {
         System.out.println(customer);
     }
 
+    @PutMapping("/update")
+    public void updateCustomer(@RequestBody Customer customer) {
+        service.updateCustomer(customer);
+    }
+
     @DeleteMapping("/delete/{id}")
     public void deleteCustomer(@PathVariable Integer id){
         service.deleteCustomer(id);
