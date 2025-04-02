@@ -16,4 +16,7 @@ public interface CustomerService {
     List<Customer> getAll();
 
     List<Customer> searchCustomerByName(String name);
+
+    Integer cal(Integer a, Integer b);
+
 }

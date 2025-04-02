@@ -59,6 +59,12 @@ public class CustomerServiceImpl implements CustomerService {
     }
 
     @Override
+    public Integer cal(Integer a, Integer b)     {
+        return a+b;
+    }
+
+
+    @Override
     public Customer searchCustomer(Integer id) {
         return mapper.map(repository.findById(id), Customer.class);
     }

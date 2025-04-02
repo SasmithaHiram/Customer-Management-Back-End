@@ -25,6 +25,7 @@ public class CustomerController {
     @GetMapping("/search/{id}")
     @ResponseStatus(HttpStatus.FOUND)
     public Customer searchCustomer(@PathVariable Integer id) {
+
         return service.searchCustomer(id);
     }
 
